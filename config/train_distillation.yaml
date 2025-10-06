@@ -1,0 +1,54 @@
+# Task type: data_process or train
+task: "train" #data_process,train
+train_architecture: lora
+# Training parameters
+dataset_path: self2/videos
+use_wandb: true
+experiment_name: "distillation"
+output_path: ./models_out/distillation/step1
+attention_type: Original #[bfground,point,orgionalregion,tps,mls,Original,region] flash_region
+lora_path: "./checkpoints/UniAnimate-Wan2.1-14B-Lora-12000.ckpt"
+teacher_lora_path: "./checkpoints/Original/teacher"
+student_lora_path: "./checkpoints/Original/student"
+#bfground b2b,f2f
+#point p2p,b2b
+#orgionalregion only f2f,no full attention
+#region f2f +full attention
+steps_per_epoch: 80
+every_n_train_steps: 80
+dataloader_num_workers: 11
+learning_rate: 1.0e-4
+accumulate_grad_batches: 1
+log_every_n_steps: 1
+# Dataset 
+max_epochs: 10
+frame_interval: 1
+num_frames: 81
+height: 512
+width: 512
+# Model paths
+
+text_encoder_path: "/ocean/projects/cis240035p/blu3/Cospeech-distillation/dit/Wan2.1-I2V-14B-720P/models_t5_umt5-xxl-enc-bf16.pth"
+image_encoder_path: "/ocean/projects/cis240035p/blu3/Cospeech-distillation/dit/Wan2.1-I2V-14B-720P/models_clip_open-clip-xlm-roberta-large-vit-huge-14.pth"
+vae_path: "/ocean/projects/cis240035p/blu3/Cospeech-distillation/dit/Wan2.1-I2V-14B-720P/Wan2.1_VAE.pth"
+dit_path: "./Wan2.1-I2V-14B-720P/diffusion_pytorch_model-00001-of-00007.safetensors,./Wan2.1-I2V-14B-720P/diffusion_pytorch_model-00002-of-00007.safetensors,./Wan2.1-I2V-14B-720P/diffusion_pytorch_model-00003-of-00007.safetensors,./Wan2.1-I2V-14B-720P/diffusion_pytorch_model-00004-of-00007.safetensors,./Wan2.1-I2V-14B-720P/diffusion_pytorch_model-00005-of-00007.safetensors,./Wan2.1-I2V-14B-720P/diffusion_pytorch_model-00006-of-00007.safetensors,./Wan2.1-I2V-14B-720P/diffusion_pytorch_model-00007-of-00007.safetensors" 
+# VAE tiling parameters
+tiled: true
+tile_size_height: 34
+tile_size_width: 34
+tile_stride_height: 18
+tile_stride_width: 16
+
+
+# LoRA parameters
+lora_target_modules: q,k,v,o,ffn.0,ffn.2
+init_lora_weights: kaiming
+training_strategy: "deepspeed_stage_2"
+lora_rank: 128
+lora_alpha: 128
+use_gradient_checkpointing: true
+use_gradient_checkpointing_offload: true
+
+
+use_swanlab: false
+swanlab_mode: null
