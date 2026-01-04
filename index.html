@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Deformable Neural Radiance Fields creates free-viewpoint portraits (nerfies) from casually captured videos.">
+  <meta name="keywords" content="Nerfies, D-NeRF, NeRF">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Input-Aware Sparse Attention for Real-Time Co-Speech Video Generation</title>
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <!-- Fonts and CSS -->
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <!-- Scripts -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<!-- Hero section -->
+<section class="hero" style="background-image: url('./static/images/background.jpg'); background-size: cover; background-position: center; min-height: 400px;">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">Input-Aware Sparse Attention for Real-Time Co-Speech Video Generation</h1>
+          
+          <!-- Authors -->
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://beijia11.github.io/" style="color: #003366;">Beijia Lu</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?user=4yMS3J8AAAAJ&hl=en">Ziyi Chen</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?user=mcBd8KUAAAAJ&hl=en">Jing Xiao</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://www.cs.cmu.edu/~junyanz/">Jun-Yan Zhu</a><sup>1</sup>
+            </span>
+          </div>
+
+          <!-- Affiliations -->
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup><span class="semi-bold">Carnegie Mellon University</span>,</span>
+            <span class="author-block"><sup>2</sup>PAII Inc.</span>
+          </div>
+          <div class="is-size-3 publication-authors">
+            <span class="author-block"><b>SIGGRAPH Asia 2025</b></span>
+          </div>
+
+          <!-- Links -->
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF -->
+              <span class="link-block">
+                <a href="./static/paper.pdf"
+                    class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon"><i class="fas fa-file-pdf"></i></span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <!-- ArXiv -->
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2510.02617"
+                    class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon"><i class="ai ai-arxiv"></i></span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Code
+              <span class="link-block">
+                <a href="https://github.com/Beijia11/IASA"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon"><i class="fab fa-github"></i></span>
+                  <span>Code</span>
+                </a>
+              </span> -->
+              <!-- Dataset -->
+              <span class="link-block">
+                <a href="./static/data.txt"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon"><i class="fas fa-database"></i></span>
+                  <span>Dataset</span>
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Teaser -->
+<section class="section">
+  <div class="section-content has-text-centered">
+    <div class="content has-text-justified">
+      <figure style="text-align: center;">
+        <img src="./static/images/teaser.jpg" alt="Visual summary" style="max-width: 100%; height: auto;">
+      </figure>
+      <p>
+        We introduce a conditional video distillation method for real-time co-speech video generation that leverages human pose conditioning for input-aware sparse attention and distillation loss. Our student model achieves 25.3 FPS, a 13.1X speedup over its teacher model, while preserving visual quality. Our method significantly improves motion coherence and lip synchronization over a leading few-step causal student model, while reducing common visual degradation in the speaker's face and hands (see yellow box).
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Abstract -->
+<section class="section" style="background: #f5f5f5;">
+  <div class="section-content">
+    <h2 class="title is-3" style="text-align: center;">Abstract</h2>
+    <div class="content has-text-justified">
+      <p>
+        Diffusion models can synthesize realistic co-speech video from audio for various applications, such as video creation and virtual agents. However, existing diffusion-based methods are slow due to numerous denoising steps and costly attention mechanisms, preventing real-time deployment. In this work, we distill a many-step diffusion video model into a few-step student model. Unfortunately, directly applying recent diffusion distillation methods degrades video quality and falls short of real-time performance. 
+      <p>
+        To address these issues, our new video distillation method leverages input human pose conditioning for both attention and loss functions. We first propose using accurate correspondence between input human pose keypoints to guide attention to relevant regions, such as the speaker's face, hands, and upper body. This input-aware sparse attention reduces redundant computations and strengthens temporal correspondences of body parts, improving inference efficiency and motion coherence. To further enhance visual quality, we introduce an input-aware distillation loss that improves lip synchronization and hand motion realism. By integrating our input-aware sparse attention and distillation loss, our method achieves real-time performance with improved visual quality compared to recent audio-driven and input-driven methods. We also conduct extensive experiments showing the effectiveness of our algorithmic design choices. 
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Method Overview -->
+<section>
+  <br><br>
+  <div class="columns is-centered has-text-centered">
+    <div class="section-content">
+      <h2 class="title is-3">Method Overview</h2>
+      <figure style="text-align: center;">
+        <img src="./static/images/method.jpg" alt="Method overview" style="max-width: 100%; height: auto;">
+      </figure>
+      <p style="text-align: left">
+        Our attention mechanism selectively focuses on tokens within salient body regions and their corresponding areas in temporally relevant frames.
+        (a) We first apply global masking, which restricts attention to the K most similar past frames based on pose similarity.
+        (b) Then local masking limits inter-frame attention to matched regions (e.g., face, hands) to enhance temporal coherence.
+        (c) Our input-aware attention masking integrates both global and local masks to form an efficient and structured sparse attention pattern.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Comparison -->
+<br><br>
+<section>
+  <div class="columns is-centered has-text-centered">
+    <div class="section-content">
+      <h2 class="title is-3">Comparison to Baselines</h2>
+      <p style="text-align: left">
+        To comprehensively evaluate the effectiveness of our model, we compare it with state-of-the-art open-source methods in both audio-driven and pose-driven video generation settings. 
+      </p><br>
+      <figure style="text-align: center;">
+        <img src="./static/images/audio_driven.jpg" alt="Audio-driven comparison" style="max-width: 100%; height: auto;">
+      </figure>
+      <p style="text-align: left">
+        Our method demonstrates clear improvements over existing audio-driven methods in lip-audio synchronization, expressive hand gestures, and overall visual quality. Specifically, our generated videos exhibit better lip-audio synchronization, where the lip movements align more naturally with the speech content. Additionally, the overall visual quality of the generated videos is significantly higher, producing sharper and more realistic appearances compared to the blurry or less realistic results from the baselines. 
+      </p><br>
+      <figure style="text-align: center;">
+        <img src="./static/images/baseline.jpg" alt="Pose-driven comparison" style="max-width: 100%; height: auto;">
+      </figure>
+      <p style="text-align: left">
+        Our method generates more natural lip and hand animations than pose-driven baselines. Existing pose-driven methods often produce stiff or unnatural movements in these critical regions. In contrast, our model maintains high fidelity and realism, with lifelike facial and hand animations, while achieving significantly faster inference.
+      </p><br>
+    </div>
+  </div>
+</section>
+
+<!-- Gallery -->
+<br>
+<section>
+  <div class="columns is-centered has-text-centered">
+    <div class="section-content">
+      <h2 class="title is-3">Gallery</h2>
+      <p style="text-align: left">
+        Given only a single static reference image and an input audio clip, our model effectively synthesizes highly realistic and expressive video outputs. These results visually demonstrate its capability to produce natural facial expressions, fluid body movements, and accurate lip synchronization in real time.
+      </p><br>
+
+      <!-- Video Grid -->
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px;">
+        <!-- Row 1 -->
+        <video src="./static/videos/video_1.mp4" controls muted loop style="width: 100%; height: auto;"></video>
+        <video src="./static/videos/video_2.mp4" controls muted loop style="width: 100%; height: auto;"></video>
+        <video src="./static/videos/video_3.mp4" controls muted loop style="width: 100%; height: auto;"></video>
+
+        <!-- Row 2 -->
+        <video src="./static/videos/video_4.mp4" controls muted loop style="width: 100%; height: auto;"></video>
+        <video src="./static/videos/video_5.mp4" controls muted loop style="width: 100%; height: auto;"></video>
+        <video src="./static/videos/video_6.mp4" controls muted loop style="width: 100%; height: auto;"></video>
+
+        <!-- Row 3 -->
+        <video src="./static/videos/video_7.mp4" controls muted loop style="width: 100%; height: auto;"></video>
+        <video src="./static/videos/video_8.mp4" controls muted loop style="width: 100%; height: auto;"></video>
+        <video src="./static/videos/video_9.mp4" controls muted loop style="width: 100%; height: auto;"></video>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Acknowledgements -->
+<br>
+<section class="section" id="acknowledgements">
+  <div class="container is-max-desktop content">
+    <h2 class="title">Acknowledgements</h2>
+    <div class="content has-text-justified">
+      <p>
+        We would like to thank Kangle Deng, Muyang Li, Nupur Kumari, Sheng-Yu Wang, Maxwell Jones, Gaurav Parmar for their insightful feedback and input that contributed to the finished work. The project is partly supported by Ping An Research.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- BibTeX -->
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@inproceedings{lu2025iasa,
+  title={Input-Aware Sparse Attention for Real-Time Co-Speech Video Generation},
+  author={Lu, Beijia and Chen, Ziyi and Xiao, Jing and Zhu, Jun-Yan},
+  booktitle = {ACM SIGGRAPH Asia},
+  year={2025}
+}</code></pre>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content has-text-centered">
+          <p>
+            This website is licensed under a 
+            <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
+              Creative Commons Attribution-ShareAlike 4.0 International License
+            </a>.
+          </p>
+          <p>
+            Website adapted from the 
+            <a href="https://github.com/nerfies/nerfies.github.io">source code</a>. 
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
