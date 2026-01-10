@@ -110,7 +110,7 @@ The code for input-aware attention applied to general conditional video generati
 If you find this repository useful for your research, please cite the following work.
 
 ```bibtex
-@article{lu2025iasa,
+@inproceedings{lu2025iasa,
   title={Input-Aware Sparse Attention for Real-Time Co-Speech Video Generation},
   author={Lu, Beijia and Chen, Ziyi and Xiao, Jing and Zhu, Jun-Yan},
   journal={ACM SIGGRAPH Asia},
